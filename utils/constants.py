@@ -27,6 +27,10 @@ model2template = {
     "google/gemma-2b": gemma_template,
     "google/gemma-7b": gemma_template,
     "microsoft/Phi-3.5-mini-instruct": phi_template,
+    "microsoft/Phi-3.5-mini-instruct": phi_template,
+    "microsoft/Phi-3-mini-4k-instruct":phi_template,
+    "microsoft/Phi-3-small-8k-instruct":phi_template,
+    "microsoft/Phi-3-medium-4k-instruct":phi_template,
 }
 
 model2size = {
