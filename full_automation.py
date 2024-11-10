@@ -49,8 +49,7 @@ if __name__ == "__main__":
             train_lora(
                 model_id=model_id,
                 context_length=context_length,
-                training_args=LoraTrainingArguments(**all_training_args[model_id]),
-                trust_remote_code=True  # 添加这个参数
+                training_args=LoraTrainingArguments(**all_training_args[model_id])
             )
         except RuntimeError as e:
             logger.error(f"Error: {e}")
