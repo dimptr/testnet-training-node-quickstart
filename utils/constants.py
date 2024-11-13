@@ -39,6 +39,7 @@ model2size = {
     "Qwen/Qwen1.5-7B": 7_720_000_000,
     "google/gemma-2b": 2_510_000_000,
     "google/gemma-7b": 8_540_000_000,
+    "Qwen/Qwen2.5-1.5B-Instruct": 1_940_050_000,
 }
 
 model2base_model = {
@@ -48,5 +49,6 @@ model2base_model = {
     "google/gemma-2b": "gemma",
     "google/gemma-7b": "gemma",
     "microsoft/Phi-3.5-mini-instruct": "phi3",
-    "Qwen/Qwen2.5-3B-Instruct": "qwen2.5"
+    "Qwen/Qwen2.5-3B-Instruct": "qwen2.5",
+    "Qwen/Qwen2.5-1.5B-Instruct" "qwen2.5",
 }
