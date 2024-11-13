@@ -1,5 +1,5 @@
 qwen_template = {
-    "system_format": "<|im_start|>system\n{content}<|im_end|>\n",
+    "system_format": "<|im_start|>system\n{content}",
     "user_format": "<|im_start|>user\n{content}<|im_end|>\n<|im_start|>assistant\n",
     "assistant_format": "{content}<|im_end|>\n",
     "system": "You are a helpful assistant.",
@@ -27,7 +27,6 @@ model2template = {
     "google/gemma-2b": gemma_template,
     "google/gemma-7b": gemma_template,
     "microsoft/Phi-3.5-mini-instruct": phi_template,
-    "microsoft/Phi-3.5-mini-instruct": phi_template,
     "microsoft/Phi-3-mini-4k-instruct":phi_template,
     "microsoft/Phi-3-small-8k-instruct":phi_template,
     "microsoft/Phi-3-medium-4k-instruct":phi_template,
@@ -51,5 +50,5 @@ model2base_model = {
     "google/gemma-7b": "gemma",
     "microsoft/Phi-3.5-mini-instruct": "phi3",
     "Qwen/Qwen2.5-3B-Instruct": "qwen2.5",
-    "Qwen/Qwen2.5-1.5B-Instruct" "qwen2.5",
+    "Qwen/Qwen2.5-1.5B-Instruct": "qwen2.5",
 }
