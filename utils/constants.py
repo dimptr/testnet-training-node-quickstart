@@ -20,6 +20,7 @@ phi_template = {
 }
 
 model2template = {
+    "Qwen/Qwen1.5-4B": qwen_template,
     "Qwen/Qwen1.5-0.5B": qwen_template,
     "Qwen/Qwen1.5-1.8B": qwen_template,
     "Qwen/Qwen2.5-3B-Instruct": qwen_template,
@@ -43,6 +44,7 @@ model2size = {
 }
 
 model2base_model = {
+    "Qwen/Qwen1.5-4B": "qwen1.5",
     "Qwen/Qwen1.5-0.5B": "qwen1.5",
     "Qwen/Qwen1.5-1.8B": "qwen1.5",
     "Qwen/Qwen1.5-7B": "qwen1.5",
