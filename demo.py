@@ -47,7 +47,7 @@ def train_lora(
         per_device_train_batch_size=training_args.per_device_train_batch_size,
         gradient_accumulation_steps=training_args.gradient_accumulation_steps,
         warmup_steps=100,
-        learning_rate=2e-4,
+        learning_rate=2e-5,
         bf16=True,
         logging_steps=20,
         output_dir="outputs",
