@@ -35,6 +35,7 @@ model2template = {
 }
 
 model2size = {
+    "Qwen/Qwen1.5-4B": 4_000_000_000,
     "Qwen/Qwen1.5-0.5B": 620_000_000,
     "Qwen/Qwen1.5-1.8B": 1_840_000_000,
     "Qwen/Qwen1.5-7B": 7_720_000_000,
