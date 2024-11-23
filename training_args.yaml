@@ -8,9 +8,9 @@
 Qwen/Qwen1.5-4B-Chat:
   per_device_train_batch_size: 2
   gradient_accumulation_steps: 2
-  num_train_epochs: 12
+  num_train_epochs: 10
   lora_rank: 8
-  lora_alpha: 12
+  lora_alpha: 10
   lora_dropout: 0.05
 
 
