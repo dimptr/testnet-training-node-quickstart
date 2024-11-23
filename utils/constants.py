@@ -20,6 +20,7 @@ phi_template = {
 }
 
 model2template = {
+    "Qwen/Qwen1.5-4B-Chat":qwen_template,
     "Qwen/Qwen1.5-4B": qwen_template,
     "Qwen/Qwen1.5-0.5B": qwen_template,
     "Qwen/Qwen1.5-1.8B": qwen_template,
@@ -35,6 +36,7 @@ model2template = {
 }
 
 model2size = {
+    "Qwen/Qwen1.5-4B-Chat": 4_000_000_000,
     "Qwen/Qwen1.5-4B": 4_000_000_000,
     "Qwen/Qwen1.5-0.5B": 620_000_000,
     "Qwen/Qwen1.5-1.8B": 1_840_000_000,
@@ -45,6 +47,7 @@ model2size = {
 }
 
 model2base_model = {
+    "Qwen/Qwen1.5-4B-Chat":"qwen1.5",
     "Qwen/Qwen1.5-4B": "qwen1.5",
     "Qwen/Qwen1.5-0.5B": "qwen1.5",
     "Qwen/Qwen1.5-1.8B": "qwen1.5",
