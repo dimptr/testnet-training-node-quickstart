@@ -20,6 +20,7 @@ phi_template = {
 }
 
 model2template = {
+    "google/gemma-2-2b-it":gemma_template,
     "Qwen/Qwen1.5-4B-Chat":qwen_template,
     "Qwen/Qwen1.5-4B": qwen_template,
     "Qwen/Qwen1.5-0.5B": qwen_template,
