@@ -37,6 +37,7 @@ model2template = {
 }
 
 model2size = {
+    "google/gemma-2-2b-it": 2_000_000_000,
     "Qwen/Qwen1.5-4B-Chat": 4_000_000_000,
     "Qwen/Qwen1.5-4B": 4_000_000_000,
     "Qwen/Qwen1.5-0.5B": 620_000_000,
@@ -49,6 +50,7 @@ model2size = {
 }
 
 model2base_model = {
+    "google/gemma-2-2b-it":"gemma",
     "Qwen/Qwen1.5-4B-Chat":"qwen1.5",
     "Qwen/Qwen1.5-4B": "qwen1.5",
     "Qwen/Qwen1.5-0.5B": "qwen1.5",
