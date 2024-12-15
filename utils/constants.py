@@ -44,6 +44,7 @@ model2size = {
     "google/gemma-2b": 2_510_000_000,
     "google/gemma-7b": 8_540_000_000,
     "Qwen/Qwen2.5-1.5B-Instruct": 1_940_050_000,
+    "Qwen/Qwen2.5-3B-Instruct": 3_000_000_000,
 }
 
 model2base_model = {
