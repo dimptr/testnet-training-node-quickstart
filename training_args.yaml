@@ -5,7 +5,7 @@
   #lora_rank: 8
   #lora_alpha: 16
  # lora_dropout: 0.05
-Qwen/Qwen2.5-3B:
+microsoft/Phi-3.5-mini-instruct:
   per_device_train_batch_size: 1
   gradient_accumulation_steps: 1
   num_train_epochs: 0.1
