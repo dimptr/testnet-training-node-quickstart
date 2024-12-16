@@ -20,6 +20,7 @@ phi_template = {
 }
 
 model2template = {
+    "Qwen/Qwen2.5-3B":qwen_template,
     "google/gemma-2-2b-it":gemma_template,
     "Qwen/Qwen1.5-4B-Chat":qwen_template,
     "Qwen/Qwen1.5-4B": qwen_template,
@@ -47,6 +48,7 @@ model2size = {
     "google/gemma-7b": 8_540_000_000,
     "Qwen/Qwen2.5-1.5B-Instruct": 1_940_050_000,
     "Qwen/Qwen2.5-3B-Instruct": 3_000_000_000,
+    "Qwen/Qwen2.5-3B": 3_0000_000_000,
 }
 
 model2base_model = {
@@ -60,5 +62,6 @@ model2base_model = {
     "google/gemma-7b": "gemma",
     "microsoft/Phi-3.5-mini-instruct": "phi3",
     "Qwen/Qwen2.5-3B-Instruct": "qwen2.5",
+    "Qwen/Qwen2.5-3B":"qwen2.5",
     "Qwen/Qwen2.5-1.5B-Instruct": "qwen2.5",
 }
