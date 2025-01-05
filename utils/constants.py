@@ -46,7 +46,7 @@ model2template =
     "Qwen/Qwen2.5-1.5B-Instruct":qwen_template,
 }
 
-model2size = 
+model2size = {
     "01-ai/Yi-9B": 9_000_000_000,
     "01-ai/Yi-9B-Chat":9_000_000_000,
     "google/gemma-2-2b-it": 2_000_000_000,
