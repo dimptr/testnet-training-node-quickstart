@@ -77,6 +77,7 @@ class SFTDataset(Dataset):
 
 
 
+
 class SFTDataCollator(object):
     def __init__(self, tokenizer, max_seq_length):
         self.tokenizer = tokenizer
