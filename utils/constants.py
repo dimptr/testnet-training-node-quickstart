@@ -27,7 +27,7 @@ phi_template = {
 }
 
 model2template = {
-    "01-ai/Yi-9B-Chat":Yi,
+    "01-ai/Yi-9B-Chat":yi_template,
     "Qwen/Qwen2.5-3B":qwen_template,
     "google/gemma-2-2b-it":gemma_template,
     "Qwen/Qwen1.5-4B-Chat":qwen_template,
