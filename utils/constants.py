@@ -6,7 +6,10 @@ Yi = {
 }
 qwen_template = {
     "system_format": "<|im_start|>system\n{content}",
-    "user_format": "<|im_start|>user\n{content}"
+    "user_format": "<|im_start|>user\n{content}",
+    "assistant_format": "<|im_start|>assistant\n{content}",
+    "end_format": "
+
 
 
 qwen_template = {
