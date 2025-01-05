@@ -26,7 +26,8 @@ phi_template = {
     "system": None,
 }
 
-model2template = {
+model2template = 
+    "01-ai/Yi-9B": yi_template,
     "01-ai/Yi-9B-Chat":yi_template,
     "Qwen/Qwen2.5-3B":qwen_template,
     "google/gemma-2-2b-it":gemma_template,
@@ -45,7 +46,8 @@ model2template = {
     "Qwen/Qwen2.5-1.5B-Instruct":qwen_template,
 }
 
-model2size = {
+model2size = 
+    "01-ai/Yi-9B": 9_000_000_000,
     "01-ai/Yi-9B-Chat":9_000_000_000,
     "google/gemma-2-2b-it": 2_000_000_000,
     "Qwen/Qwen1.5-4B-Chat": 4_000_000_000,
@@ -61,7 +63,7 @@ model2size = {
 }
 
 model2base_model = {
-    "01-ai/Yi-9B-Chat":"Yi",
+    "01-ai/Yi-9B-Chat":yi_template,
     "google/gemma-2-2b-it":"gemma",
     "Qwen/Qwen1.5-4B-Chat":"qwen1.5",
     "Qwen/Qwen1.5-4B": "qwen1.5",
