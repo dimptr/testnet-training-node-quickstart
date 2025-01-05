@@ -24,57 +24,63 @@ class SFTDataset(Dataset):
         return len(self.data_list)
 
     def __getitem__(self, index):
-        data = self.data_list[index]
-        data = json.loads(data)
-        input_ids, target_mask = [], []
+        while True:
+            data = self.data_list[index]
+            data = json.loads(data)
+            input_ids, target_mask = [], []
 
-        # setting system information
-        if self.system_format is not None:
-            system = data["system"].strip() if "system" in data.keys() else self.system
+            # setting system information
+            if self.system_format is not None:
+                system = data["system"].strip() if "system" in data.keys() else self.system
 
-            if system is not None:
-                system_text = self.system_format.format(content=system)
-                input_ids = self.tokenizer.encode(system_text, add_special_tokens=False)
-                target_mask = [0] * len(input_ids)
+                if system is not None:
+                    system_text = self.system_format.format(content=system)
+                    input_ids = self.tokenizer.encode(system_text, add_special_tokens=False)
+                    target_mask = [0] * len(input_ids)
 
-        conversations = data["conversations"]
+            conversations = data["conversations"]
 
-        for i in range(0, len(conversations) - 1, 2):
-            if (
-                conversations[i]["role"] != "user"
-                or conversations[i + 1]["role"] != "assistant"
-            ):
-                logger.error(f"Incorrect role order at index {index}: {conversations}")
-                return self.__getitem__((index + 1) % len(self.data_list))  # Skip this example and fetch the next one
+            valid = True
+            for i in range(0, len(conversations) - 1, 2):
+                if (
+                    conversations[i]["role"] != "user"
+                    or conversations[i + 1]["role"] != "assistant"
+                ):
+                    logger.error(f"Incorrect role order at index {index}: {conversations}")
+                    valid = False
+                    break
 
-            human = conversations[i]["content"].strip()
-            assistant = conversations[i + 1]["content"].strip()
+                human = conversations[i]["content"].strip()
+                assistant = conversations[i + 1]["content"].strip()
 
-            human = self.user_format.format(
-                content=human, stop_token=self.tokenizer.eos_token
-            )
-            assistant = self.assistant_format.format(
-                content=assistant, stop_token=self.tokenizer.eos_token
-            )
+                human = self.user_format.format(
+                    content=human, stop_token=self.tokenizer.eos_token
+                )
+                assistant = self.assistant_format.format(
+                    content=assistant, stop_token=self.tokenizer.eos_token
+                )
 
-            input_tokens = self.tokenizer.encode(human, add_special_tokens=False)
-            output_tokens = self.tokenizer.encode(assistant, add_special_tokens=False)
+                input_tokens = self.tokenizer.encode(human, add_special_tokens=False)
+                output_tokens = self.tokenizer.encode(assistant, add_special_tokens=False)
 
-            input_ids += input_tokens + output_tokens
-            target_mask += [0] * len(input_tokens) + [1] * len(output_tokens)
+                input_ids += input_tokens + output_tokens
+                target_mask += [0] * len(input_tokens) + [1] * len(output_tokens)
 
-        assert len(input_ids) == len(target_mask)
+            if valid:
+                assert len(input_ids) == len(target_mask)
 
-        input_ids = input_ids[: self.max_seq_length]
-        target_mask = target_mask[: self.max_seq_length]
-        attention_mask = [1] * len(input_ids)
-        assert len(input_ids) == len(target_mask) == len(attention_mask)
-        inputs = {
-            "input_ids": input_ids,
-            "attention_mask": attention_mask,
-            "target_mask": target_mask,
-        }
-        return inputs
+                input_ids = input_ids[: self.max_seq_length]
+                target_mask = target_mask[: self.max_seq_length]
+                attention_mask = [1] * len(input_ids)
+                assert len(input_ids) == len(target_mask) == len(attention_mask)
+                inputs = {
+                    "input_ids": input_ids,
+                    "attention_mask": attention_mask,
+                    "target_mask": target_mask,
+                }
+                return inputs
+            else:
+                index = (index + 1) % len(self.data_list)  # Skip this example and fetch the next one
 
 
 class SFTDataCollator(object):
@@ -124,3 +130,20 @@ class SFTDataCollator(object):
             "labels": labels,
         }
         return inputs
+
+# 在开始训练之前，确保 `model_id` 在支持的模型列表中
+supported_model_ids = ["model1", "model2", "google/gemma-2-9b-it"]  # 示例支持的模型列表
+
+def train_lora(model_id):
+    if model_id not in supported_model_ids:
+        raise AssertionError(f"model_id {model_id} not supported")
+    # 训练逻辑
+    ...
+
+if __name__ == "__main__":
+    model_id = "google/gemma-2-9b-it"
+    try:
+        train_lora(model_id)
+    except AssertionError as e:
+        logger.error(e)
+        logger.info("Proceed to the next model...")
