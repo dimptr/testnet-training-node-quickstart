@@ -45,7 +45,8 @@ class SFTDataset(Dataset):
                 or conversations[i + 1]["role"] != "assistant"
             ):
                 logger.error(f"Incorrect role order at index {index}: {conversations}")
-                raise ValueError("The role order of the conversation is not correct")
+                return self.__getitem__((index + 1) % len(self.data_list))  # Skip this example and fetch the next one
+
             human = conversations[i]["content"].strip()
             assistant = conversations[i + 1]["content"].strip()
 
