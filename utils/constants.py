@@ -26,7 +26,7 @@ phi_template = {
     "system": None,
 }
 
-model2template = 
+model2template = {
     "01-ai/Yi-9B": yi_template,
     "01-ai/Yi-9B-Chat":yi_template,
     "Qwen/Qwen2.5-3B":qwen_template,
