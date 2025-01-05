@@ -1,8 +1,8 @@
-Yi = {
-    "system_format": "<|system|>\n{content}<|end|>",
-    "user_format": "<|user|>\n{content}<|end|>",
-    "assistant_format": "<|assistant|>\n{content}<|end|>",
-    "system": "You are a helpful assistant.",
+yi_template = {
+    "system_format": "<|im_start|>system\n{content}<|im_end|>\n",
+    "user_format": "<|im_start|>user\n{content}<|im_end|>\n<|im_start|>assistant\n",
+    "assistant_format": "{content}<|im_end|>\n",
+    "system": None,
 }
 
 qwen_template = {
