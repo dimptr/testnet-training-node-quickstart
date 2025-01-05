@@ -14,7 +14,7 @@
   # lora_rank: 4
   # lora_alpha: 8
   # lora_dropout: 0.1
-01-ai/Yi-9B-Chat:
+01-ai/Yi-9B:
   per_device_train_batch_size: 1
   gradient_accumulation_steps: 1
   num_train_epochs: 0.1
