@@ -4,7 +4,8 @@ from typing import Any, Dict, List
 import torch
 from loguru import logger
 from torch.utils.data import Dataset
-from utils.tool_utils import function_formatter
+#from utils.tool_utils import function_formatter
+
 
 
 class SFTDataset(Dataset):
